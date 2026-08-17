@@ -4,6 +4,7 @@ function FindProxyForURL(url, host) {
     if (
         dnsDomainIs(host, "example.com")  || host === "example.com" ||
         dnsDomainIs(host, "pastebin.com")  || host === "pastebin.com" ||
+        dnsDomainIs(host, "grok.com")  || host === "grok.com" ||
         dnsDomainIs(host, "dd.def.com") || host === "accounts.google.com"
     ) {
         return "PROXY 193.24.208.228:2871; DIRECT";
