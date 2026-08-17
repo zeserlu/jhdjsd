@@ -1,10 +1,10 @@
-function FindProxyForURL(url, host) {
+ function FindProxyForURL(url, host) {
     host = host.toLowerCase();
-    
-    var lowerUrl = url.toLowerCase();
-    if (lowerUrl.substring(lowerUrl.length - 4) === ".mp4" || lowerUrl.indexOf(".mp4?") !== -1) {
-        return "DIRECT";
+    if (
+        dnsDomainIs(host, "example.com")  || host === "example.com" ||
+        dnsDomainIs(host, "pastebin.com")  || host === "pastebin.com" 
+    ) {
+        return "PROXY 193.24.208.228:2871; DIRECT";
     }
-
-    return "PROXY 193.24.208.228:2871; DIRECT";
+    return "DIRECT";
 }
